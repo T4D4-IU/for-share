@@ -1,0 +1,407 @@
+Welcome to Ubuntu 22.04.1 LTS (GNU/Linux 5.15.74.2-microsoft-standard-WSL2 x86_64)
+ * Documentation: https://help.ubuntu.com
+ * Management: https://landscape.canonical.com
+ * Support: https://ubuntu.com/advantage
+This message is shown once a day. To disable it please create the
+/home/t4d4/.hushlogin file.
+t4d4@LAPTOP-VK571E75:~$ sudo sh -c "echo 'nameserver 192.168.11.1' > /etc/resolv.conf"
+[sudo] password for t4d4:
+t4d4@LAPTOP-VK571E75:~$ sudo apt-get upgrade
+Reading package lists... Done
+Building dependency tree... Done
+Reading state information... Done
+Calculating upgrade... Done
+0 upgraded, 0 newly installed, 0 to remove and 0 not upgraded.
+t4d4@LAPTOP-VK571E75:~$ sudo apt-get update
+Hit:1 http://archive.ubuntu.com/ubuntu jammy InRelease
+Get:2 http://security.ubuntu.com/ubuntu jammy-security InRelease [110 kB]
+Get:3 http://archive.ubuntu.com/ubuntu jammy-updates InRelease [114 kB]
+Get:4 http://security.ubuntu.com/ubuntu jammy-security/main amd64 Packages [525 kB]
+Get:5 http://archive.ubuntu.com/ubuntu jammy-backports InRelease [99.8 kB]
+Get:6 http://security.ubuntu.com/ubuntu jammy-security/main Translation-en [113 kB]
+Get:7 http://security.ubuntu.com/ubuntu jammy-security/main amd64 c-n-f Metadata [7352 B]
+Get:8 http://security.ubuntu.com/ubuntu jammy-security/restricted amd64 Packages [452 kB]
+Get:9 http://security.ubuntu.com/ubuntu jammy-security/restricted Translation-en [69.2 kB]
+Get:10 http://security.ubuntu.com/ubuntu jammy-security/universe amd64 Packages [622 kB]
+Get:11 http://archive.ubuntu.com/ubuntu jammy-updates/main amd64 Packages [758 kB]
+Get:12 http://security.ubuntu.com/ubuntu jammy-security/universe Translation-en [82.7 kB]
+Get:13 http://security.ubuntu.com/ubuntu jammy-security/universe amd64 c-n-f Metadata [11.0 kB]
+Get:14 http://archive.ubuntu.com/ubuntu jammy-updates/main Translation-en [169 kB]
+Get:15 http://archive.ubuntu.com/ubuntu jammy-updates/main amd64 c-n-f Metadata [11.4 kB]
+Get:16 http://archive.ubuntu.com/ubuntu jammy-updates/restricted amd64 Packages [488 kB]
+Get:17 http://archive.ubuntu.com/ubuntu jammy-updates/restricted Translation-en [74.9 kB]
+Get:18 http://archive.ubuntu.com/ubuntu jammy-updates/universe amd64 Packages [761 kB]
+Get:19 http://archive.ubuntu.com/ubuntu jammy-updates/universe Translation-en [128 kB]
+Get:20 http://archive.ubuntu.com/ubuntu jammy-updates/universe amd64 c-n-f Metadata [14.0 kB]
+Fetched 4612 kB in 4s (1296 kB/s)
+Reading package lists... Done
+t4d4@LAPTOP-VK571E75:~$ dfx --version
+-bash: /usr/local/bin/dfx: Permission denied
+t4d4@LAPTOP-VK571E75:~$ sudo dfx --version
+dfx 0.12.1
+t4d4@LAPTOP-VK571E75:~$ sudo dfx upgrade
+Current version: 0.12.1
+Fetching manifest https://sdk.dfinity.org/manifest.json
+Already up to date
+t4d4@LAPTOP-VK571E75:~$ dfx wallet --network ic redeem-faucet-coupon 58569-967EC-DC4A6
+-bash: /usr/local/bin/dfx: Permission denied
+t4d4@LAPTOP-VK571E75:~$ sudo dfx wallet --network ic redeem-faucet-coupon 58569-967EC-DC4A6
+WARN: The default identity is not stored securely. Do not use it to control a lot of cycles/ICP. Create a new identity with `dfx identity create` and use it in mainnet-facing commands with the `--identity` flag
+^Z
+[1]+ Stopped sudo dfx wallet --network ic redeem-faucet-coupon 58569-967EC-DC4A6
+t4d4@LAPTOP-VK571E75:~$ sudo dfx canister --network=ic call fg7gi-vyaaa-aaaal-qadca-cai redeem 58569-967EC-DC4A6
+WARN: The default identity is not stored securely. Do not use it to control a lot of cycles/ICP. Create a new identity with `dfx identity create` and use it in mainnet-facing commands with the `--identity` flag
+error: parser error
+  ┌─ Candid argument:1:1
+  │
+1 │ 58569-967EC-DC4A6
+  │ ^^^^^ Unexpected token
+  │
+  = Expects "("
+Error: Failed to create argument blob.
+Caused by: Failed to create argument blob.
+  Invalid argument: Invalid Candid values: Candid parser error: Unrecognized token `Decimal("58569")` found at 0:5
+Expected one of "("
+t4d4@LAPTOP-VK571E75:~$ cd ic-static-website/
+t4d4@LAPTOP-VK571E75:~/ic-static-website$ sudo dfx canister --network=ic call fg7gi-vyaaa-aaaal-qadca-cai redeem 58569-967EC-DC4A6
+WARN: The default identity is not stored securely. Do not use it to control a lot of cycles/ICP. Create a new identity with `dfx identity create` and use it in mainnet-facing commands with the `--identity` flag
+error: parser error
+  ┌─ Candid argument:1:1
+  │
+1 │ 58569-967EC-DC4A6
+  │ ^^^^^ Unexpected token
+  │
+  = Expects "("
+Error: Failed to create argument blob.
+Caused by: Failed to create argument blob.
+  Invalid argument: Invalid Candid values: Candid parser error: Unrecognized token `Decimal("58569")` found at 0:5
+Expected one of "("
+t4d4@LAPTOP-VK571E75:~/ic-static-website$ sudo dfx wallet --network ic redeem-faucet-coupon 58569-967EC-DC4A6
+WARN: The default identity is not stored securely. Do not use it to control a lot of cycles/ICP. Create a new identity with `dfx identity create` and use it in mainnet-facing commands with the `--identity` flag
+Error: Failed 'redeem' call.
+Caused by: Failed 'redeem' call.
+  The Replica returned an error: code 4, message: "Code is already redeemed: {canister = yeikt-4aaaa-aaaag-qa55q-cai; controller = yjzyy-hsvo4-nb2ee-imavn-h6jsp-y7sjk-yi4gu-fpxbk-ult2o-yfa7d-rae; coupon = ?"58569-967EC-DC4A6"; creation = +1_670_592_126_506_275_179; cycle = 20_000_000_000_000; hash = null}"
+t4d4@LAPTOP-VK571E75:~/ic-static-website$ sudo dfx canister --network=ic call fg7gi-vyaaa-aaaal-qadca-cai redeem '(58569-967EC-DC4A6)'
+WARN: The default identity is not stored securely. Do not use it to control a lot of cycles/ICP. Create a new identity with `dfx identity create` and use it in mainnet-facing commands with the `--identity` flag
+error: parser error
+  ┌─ Candid argument:1:7
+  │
+1 │ (58569-967EC-DC4A6)
+  │ ^ Unexpected token
+  │
+  = Expects one of ")", ",", ":", ";", "}"
+Error: Failed to create argument blob.
+Caused by: Failed to create argument blob.
+  Invalid argument: Invalid Candid values: Candid parser error: Unrecognized token `Sign('-')` found at 6:7
+Expected one of ")", ",", ":", ";" or "}"
+t4d4@LAPTOP-VK571E75:~/ic-static-website$ sudo dfx canister --network=ic call fg7gi-vyaaa-aaaal-qadca-cai redeem '(58569967ECDC4A6)'
+WARN: The default identity is not stored securely. Do not use it to control a lot of cycles/ICP. Create a new identity with `dfx identity create` and use it in mainnet-facing commands with the `--identity` flag
+error: parser error
+  ┌─ Candid argument:1:10
+  │
+1 │ (58569967ECDC4A6)
+  │ ^^^^^^^ Unexpected token
+  │
+  = Expects one of ")", ",", ":", ";", "}"
+Error: Failed to create argument blob.
+Caused by: Failed to create argument blob.
+  Invalid argument: Invalid Candid values: Candid parser error: Unrecognized token `Id("ECDC4A6")` found at 9:16
+Expected one of ")", ",", ":", ";" or "}"
+t4d4@LAPTOP-VK571E75:~/ic-static-website$ dfx canister --network=ic status CANISTER_ID
+-bash: /usr/local/bin/dfx: Permission denied
+t4d4@LAPTOP-VK571E75:~/ic-static-website$ sudo dfx canister --network=ic status CANISTER_ID
+WARN: The default identity is not stored securely. Do not use it to control a lot of cycles/ICP. Create a new identity with `dfx identity create` and use it in mainnet-facing commands with the `--identity` flag
+Error: Failed to get canister status for 'CANISTER_ID'.
+Caused by: Failed to get canister status for 'CANISTER_ID'.
+  Failed to determine id for canister 'CANISTER_ID'.
+    Cannot find canister id. Please issue 'dfx canister create CANISTER_ID --network ic'.
+t4d4@LAPTOP-VK571E75:~/ic-static-website$ sudo dfx canister create CANISTER_ID --network ic
+WARN: The default identity is not stored securely. Do not use it to control a lot of cycles/ICP. Create a new identity with `dfx identity create` and use it in mainnet-facing commands with the `--identity` flag
+Error: Failed to get wallet canister caller for identity 'default' on network 'ic'.
+Caused by: Failed to get wallet canister caller for identity 'default' on network 'ic'.
+  Failed to get wallet for identity 'default' on network 'ic'.
+    Wallet not configured.
+      Diagnosis was added here.
+Error explanation:
+This command requires a configured wallet, but the combination of identity 'default' and network 'ic' has no wallet set.
+How to resolve the error:
+To use an identity with a configured wallet you can do one of the following:
+- Run the command for a network where you have a wallet configured. To do so, add '--network <network name>' to your command.
+- Switch to an identity that has a wallet configured using 'dfx identity use <identity name>'.
+- Configure a wallet for this identity/network combination: 'dfx identity set-wallet <wallet id> --network <network name>'.
+t4d4@LAPTOP-VK571E75:~/ic-static-website$ dfx canister --network=ic call fg7gi-vyaaa-aaaal-qadca-cai redeem '("YOUR_COUPON_CODE")'
+-bash: /usr/local/bin/dfx: Permission denied
+t4d4@LAPTOP-VK571E75:~/ic-static-website$ sudo dfx canister --network=ic call fg7gi-vyaaa-aaaal-qadca-cai redeem '("YOUR_COUPON_CODE")'
+WARN: The default identity is not stored securely. Do not use it to control a lot of cycles/ICP. Create a new identity with `dfx identity create` and use it in mainnet-facing commands with the `--identity` flag
+Error: Failed update call.
+Caused by: Failed update call.
+  The Replica returned an error: code 4, message: "Code is expired or not redeemable"
+t4d4@LAPTOP-VK571E75:~/ic-static-website$ sudo dfx identity create
+error: Found argument 'create' which wasn't expected, or isn't valid in this context
+USAGE:
+    dfx identity [OPTIONS] <SUBCOMMAND>
+For more information try --help
+t4d4@LAPTOP-VK571E75:~/ic-static-website$ sudo dfx --help
+dfx 0.12.1
+The DFINITY Executor
+USAGE:
+    dfx [OPTIONS] <SUBCOMMAND>
+OPTIONS:
+    -h, --help Print help information
+        --identity <IDENTITY> The user identity to run this command as. It contains your
+                                 principal as well as some things DFX associates with it like the
+                                 wallet
+        --log <LOGMODE> The logging mode to use. You can log to stderr, a file, or both
+                                 [default: stderr] [possible values: stderr, tee, file]
+        --logfile <LOGFILE> The file to log to, if logging to a file (see --logmode)
+    -q, --quiet Suppresses informational messages. -qq limits to errors only; -qqqq
+                                 disables them all
+    -v, --verbose Displays detailed information about operations. -vv will generate a
+                                 very large number of messages and can affect performance
+    -V, --version Print version information
+SUBCOMMANDS:
+    bootstrap Starts the bootstrap server
+    build Builds all or specific canisters from the code in your project. By default,
+                      all canisters are built
+    cache Manages the dfx version cache
+    canister Manages canisters deployed on a network replica
+    deploy Deploys all or a specific canister from the code in your project. By default,
+                      all canisters are deployed
+    diagnose Detects known problems in the current environment caused by upgrading DFX, and
+                      suggests commands to fix them. These commands can be batch-run automatically
+                      via `dfx fix`
+    fix Applies one-time fixes for known problems in the current environment caused by
+                      upgrading DFX. Makes no changes that would not have been suggested by `dfx
+                      diagnose`
+    generate Generate type declarations for canisters from the code in your project
+    help Print this message or the help of the given subcommand(s)
+    identity Manages identities used to communicate with the Internet Computer network.
+                      Setting an identity enables you to test user-based access controls
+    info
+    ledger Ledger commands
+    new Creates a new project
+    nns Options for `dfx nns` and its subcommands
+    ping Pings an Internet Computer network and returns its status
+    quickstart
+    remote Commands used to work with remote canisters
+    replica Starts a local Internet Computer replica
+    schema Prints the schema for dfx.json
+    start Starts the local replica and a web server for the current project
+    stop Stops the local network replica
+    toolchain Manage the dfx toolchains
+    upgrade Upgrade DFX
+    wallet Helper commands to manage the user's cycles wallet
+t4d4@LAPTOP-VK571E75:~/ic-static-website$ sudo dfx canister --network=ic call fg7gi-vyaaa-aaaal-qadca-cai redeem '("YOUR_COUPON_CODE")'
+WARN: The default identity is not stored securely. Do not use it to control a lot of cycles/ICP. Create a new identity with `dfx identity create` and use it in mainnet-facing commands with the `--identity` flag
+Error: Failed update call.
+Caused by: Failed update call.
+  The Replica returned an error: code 4, message: "Code is expired or not redeemable"
+t4d4@LAPTOP-VK571E75:~/ic-static-website$ sudo dfx identity create --identity
+error: Found argument 'create' which wasn't expected, or isn't valid in this context
+USAGE:
+    dfx identity [OPTIONS] <SUBCOMMAND>
+For more information try --help
+t4d4@LAPTOP-VK571E75:~/ic-static-website$ sudo dfx wallet --network ic redeem-faucet-coupon 58569-967EC-DC4A6
+WARN: The default identity is not stored securely. Do not use it to control a lot of cycles/ICP. Create a new identity with `dfx identity create` and use it in mainnet-facing commands with the `--identity` flag
+Error: Failed 'redeem' call.
+Caused by: Failed 'redeem' call.
+  The Replica returned an error: code 4, message: "Code is already redeemed: {canister = yeikt-4aaaa-aaaag-qa55q-cai; controller = yjzyy-hsvo4-nb2ee-imavn-h6jsp-y7sjk-yi4gu-fpxbk-ult2o-yfa7d-rae; coupon = ?"58569-967EC-DC4A6"; creation = +1_670_592_126_506_275_179; cycle = 20_000_000_000_000; hash = null}"
+t4d4@LAPTOP-VK571E75:~/ic-static-website$ sudo dfx canister --network=ic status CANISTER_ID
+WARN: The default identity is not stored securely. Do not use it to control a lot of cycles/ICP. Create a new identity with `dfx identity create` and use it in mainnet-facing commands with the `--identity` flag
+Error: Failed to get canister status for 'CANISTER_ID'.
+Caused by: Failed to get canister status for 'CANISTER_ID'.
+  Failed to determine id for canister 'CANISTER_ID'.
+    Cannot find canister id. Please issue 'dfx canister create CANISTER_ID --network ic'.
+t4d4@LAPTOP-VK571E75:~/ic-static-website$ dfx canister create CANISTER_ID --network ic
+-bash: /usr/local/bin/dfx: Permission denied
+t4d4@LAPTOP-VK571E75:~/ic-static-website$ sudo dfx canister create CANISTER_ID --network ic
+WARN: The default identity is not stored securely. Do not use it to control a lot of cycles/ICP. Create a new identity with `dfx identity create` and use it in mainnet-facing commands with the `--identity` flag
+Error: Failed to get wallet canister caller for identity 'default' on network 'ic'.
+Caused by: Failed to get wallet canister caller for identity 'default' on network 'ic'.
+  Failed to get wallet for identity 'default' on network 'ic'.
+    Wallet not configured.
+      Diagnosis was added here.
+Error explanation:
+This command requires a configured wallet, but the combination of identity 'default' and network 'ic' has no wallet set.
+How to resolve the error:
+To use an identity with a configured wallet you can do one of the following:
+- Run the command for a network where you have a wallet configured. To do so, add '--network <network name>' to your command.
+- Switch to an identity that has a wallet configured using 'dfx identity use <identity name>'.
+- Configure a wallet for this identity/network combination: 'dfx identity set-wallet <wallet id> --network <network name>'.
+t4d4@LAPTOP-VK571E75:~/ic-static-website$ sudo dfx identity --network=ic set-wallet yeikt-4aaaa-aaaag-qa55q-cai
+WARN: The default identity is not stored securely. Do not use it to control a lot of cycles/ICP. Create a new identity with `dfx identity create` and use it in mainnet-facing commands with the `--identity` flag
+Checking availability of the canister on the network...
+Setting wallet for identity 'default' on network 'ic' to id 'yeikt-4aaaa-aaaag-qa55q-cai'
+Wallet set successfully.
+t4d4@LAPTOP-VK571E75:~/ic-static-website$ sudo dfx wallet --network=ic balance
+WARN: The default identity is not stored securely. Do not use it to control a lot of cycles/ICP. Create a new identity with `dfx identity create` and use it in mainnet-facing commands with the `--identity` flag
+20.099 TC (trillion cycles).
+t4d4@LAPTOP-VK571E75:~/ic-static-website$ sudo dfx deploy --network ic --with-cycles 1000000000000
+WARN: The default identity is not stored securely. Do not use it to control a lot of cycles/ICP. Create a new identity with `dfx identity create` and use it in mainnet-facing commands with the `--identity` flag
+Deploying all canisters.
+Creating canisters...
+Creating canister website...
+website canister created on network ic with canister id: dzskd-haaaa-aaaag-qbcsq-cai
+Building canisters...
+Building frontend...
+Error: Failed while trying to deploy canisters.
+Caused by: Failed while trying to deploy canisters.
+  Failed to build call canisters.
+    Failed while trying to build all canisters.
+      The post-build step failed for canister 'dzskd-haaaa-aaaag-qbcsq-cai' (website) with an embedded error: Failed to build frontend for network 'ic'.: Error executing "npm" "run" "build": No such file or directory (os error 2)
+t4d4@LAPTOP-VK571E75:~/ic-static-website$
+t4d4@LAPTOP-VK571E75:~/ic-static-website$ dfx identity list
+-bash: /usr/local/bin/dfx: Permission denied
+t4d4@LAPTOP-VK571E75:~/ic-static-website$ sudo dfx identity list
+anonymous
+default *
+t4d4@LAPTOP-VK571E75:~/ic-static-website$ cd
+t4d4@LAPTOP-VK571E75:~$ sudo dfx identity list
+anonymous
+default *
+t4d4@LAPTOP-VK571E75:~$ cd ic-static-website/
+t4d4@LAPTOP-VK571E75:~/ic-static-website$ npm -v
+/usr/bin/env: ‘bash\r’: No such file or directory
+t4d4@LAPTOP-VK571E75:~/ic-static-website$ npm install
+/usr/bin/env: ‘bash\r’: No such file or directory
+t4d4@LAPTOP-VK571E75:~/ic-static-website$ sudo dfx deploy --network ic --with-cycles 1000000000000
+[sudo] password for t4d4:
+WARN: The default identity is not stored securely. Do not use it to control a lot of cycles/ICP. Create a new identity with `dfx identity create` and use it in mainnet-facing commands with the `--identity` flag
+Deploying all canisters.
+All canisters have already been created.
+Building canisters...
+Building frontend...
+Error: Failed while trying to deploy canisters.
+Caused by: Failed while trying to deploy canisters.
+  Failed to build call canisters.
+    Failed while trying to build all canisters.
+      The post-build step failed for canister 'dzskd-haaaa-aaaag-qbcsq-cai' (website) with an embedded error: Failed to build frontend for network 'ic'.: Error executing "npm" "run" "build": No such file or directory (os error 2)
+t4d4@LAPTOP-VK571E75:~/ic-static-website$ dfx identity whoami
+-bash: /usr/local/bin/dfx: Permission denied
+t4d4@LAPTOP-VK571E75:~/ic-static-website$ sudo dfx identity whoami
+default
+t4d4@LAPTOP-VK571E75:~/ic-static-website$ dfx identity get-principal
+-bash: /usr/local/bin/dfx: Permission denied
+t4d4@LAPTOP-VK571E75:~/ic-static-website$ sudo dfx identity get-principal
+yjzyy-hsvo4-nb2ee-imavn-h6jsp-y7sjk-yi4gu-fpxbk-ult2o-yfa7d-rae
+t4d4@LAPTOP-VK571E75:~/ic-static-website$ sudo dfx ledger account-id
+b56d08e06bdf4cda16ebea58afd8185235d64f13619e2a47fce298e7e017dfb5
+t4d4@LAPTOP-VK571E75:~/ic-static-website$ sudo dfx identity --network ic get-wallet
+WARN: The default identity is not stored securely. Do not use it to control a lot of cycles/ICP. Create a new identity with `dfx identity create` and use it in mainnet-facing commands with the `--identity` flag
+yeikt-4aaaa-aaaag-qa55q-cai
+t4d4@LAPTOP-VK571E75:~/ic-static-website$ dfx canister --network ic call "yeikt-4aaaa-aaaag-qa55q-cai" authorize '(
+principal "ejta3-neil3-qek6c-i7rdw-sxreh-lypfe-v6hjg-6so7x-5ugze-3iohr-2qe")'
+-bash: /usr/local/bin/dfx: Permission denied
+t4d4@LAPTOP-VK571E75:~/ic-static-website$ sudo dfx canister --network ic call "yeikt-4aaaa-aaaag-qa55q-cai" authori
+ze '(principal "ejta3-neil3-qek6c-i7rdw-sxreh-lypfe-v6hjg-6so7x-5ugze-3iohr-2qe")'
+WARN: The default identity is not stored securely. Do not use it to control a lot of cycles/ICP. Create a new identity with `dfx identity create` and use it in mainnet-facing commands with the `--identity` flag
+()
+t4d4@LAPTOP-VK571E75:~/ic-static-website$ sudo dfx identity whoami
+default
+t4d4@LAPTOP-VK571E75:~/ic-static-website$ sudo dfx canister create
+error: The following required arguments were not provided:
+    --all
+USAGE:
+    dfx canister create --all
+For more information try --help
+t4d4@LAPTOP-VK571E75:~/ic-static-website$ sudo dfx canister create -all
+error: Found argument '-a' which wasn't expected, or isn't valid in this context
+        If you tried to supply `-a` as a value rather than a flag, use `-- -a`
+USAGE:
+    dfx canister create [OPTIONS] [CANISTER_NAME]
+For more information try --help
+t4d4@LAPTOP-VK571E75:~/ic-static-website$ sudo dfx canister create -a
+error: Found argument '-a' which wasn't expected, or isn't valid in this context
+        If you tried to supply `-a` as a value rather than a flag, use `-- -a`
+USAGE:
+    dfx canister create [OPTIONS] [CANISTER_NAME]
+For more information try --help
+t4d4@LAPTOP-VK571E75:~/ic-static-website$ sudo dfx canister create --a
+error: Found argument '--a' which wasn't expected, or isn't valid in this context
+        If you tried to supply `--a` as a value rather than a flag, use `-- --a`
+USAGE:
+    dfx canister create [OPTIONS] [CANISTER_NAME]
+For more information try --help
+t4d4@LAPTOP-VK571E75:~/ic-static-website$ sudo dfx canister create --all
+Error: Failed to fetch root key.
+Caused by: Failed to fetch root key.
+  Encountered an error while trying to query the replica.
+    An error happened during communication with the replica: error sending request for url (http://127.0.0.1:4943/api/v2/status): error trying to connect: tcp connect error: Connection refused (os error 111)
+t4d4@LAPTOP-VK571E75:~/ic-static-website$ sudo dfx start --background
+Running dfx start for version 0.12.1
+Using the default definition for the 'local' shared network because /root/.config/dfx/networks.json does not exist.
+Dashboard: http://localhost:34497/_/dashboard
+t4d4@LAPTOP-VK571E75:~/ic-static-website$ dfx wallet balance
+-bash: /usr/local/bin/dfx: Permission denied
+t4d4@LAPTOP-VK571E75:~/ic-static-website$ sudo dfx wallet balance
+Creating a wallet canister on the local network.
+The wallet canister on the "local" network for user "default" is "rwlgt-iiaaa-aaaaa-aaaaa-cai"
+99.991 TC (trillion cycles).
+t4d4@LAPTOP-VK571E75:~/ic-static-website$ sudo dfx ping ic
+{
+  "ic_api_version": "0.18.0" "impl_hash": "f34fc854e77004e92a3dd3da63f63418c51c8b122b009e6630cac10d1f9e3053" "impl_version": "36f4a1c2903aed012b95b3b073e052c4036aef09" "replica_health_status": "healthy" "root_key": [48, 129, 130, 48, 29, 6, 13, 43, 6, 1, 4, 1, 130, 220, 124, 5, 3, 1, 2, 1, 6, 12, 43, 6, 1, 4, 1, 130, 220, 124, 5, 3, 2, 1, 3, 97, 0, 129, 76, 14, 110, 199, 31, 171, 88, 59, 8, 189, 129, 55, 60, 37, 92, 60, 55, 27, 46, 132, 134, 60, 152, 164, 241, 224, 139, 116, 35, 93, 20, 251, 93, 156, 12, 213, 70, 217, 104, 95, 145, 58, 12, 11, 44, 197, 52, 21, 131, 191, 75, 67, 146, 228, 103, 219, 150, 214, 91, 155, 180, 203, 113, 113, 18, 248, 71, 46, 13, 90, 77, 20, 80, 95, 253, 116, 132, 176, 18, 145, 9, 28, 95, 135, 185, 136, 131, 70, 63, 152, 9, 26, 11, 170, 174]
+}
+t4d4@LAPTOP-VK571E75:~/ic-static-website$ sudo dfx wallet --network ic balance
+WARN: The default identity is not stored securely. Do not use it to control a lot of cycles/ICP. Create a new identity with `dfx identity create` and use it in mainnet-facing commands with the `--identity` flag
+19.099 TC (trillion cycles).
+t4d4@LAPTOP-VK571E75:~/ic-static-website$ sudo dfx identity whoami
+default
+t4d4@LAPTOP-VK571E75:~/ic-static-website$ sudo dfx identity list
+anonymous
+default *
+t4d4@LAPTOP-VK571E75:~/ic-static-website$ sudo dfx canister create --all
+Creating canister website...
+website canister created with canister id: rrkah-fqaaa-aaaaa-aaaaq-cai
+t4d4@LAPTOP-VK571E75:~/ic-static-website$ sudo dfx identity whoami
+default
+t4d4@LAPTOP-VK571E75:~/ic-static-website$ sudo dfx identity list
+anonymous
+default *
+t4d4@LAPTOP-VK571E75:~/ic-static-website$ sudo dfx canister id lookup
+Error: Failed to determine id for canister 'lookup'.
+Caused by: Failed to determine id for canister 'lookup'.
+  Cannot find canister id. Please issue 'dfx canister create lookup'.
+t4d4@LAPTOP-VK571E75:~/ic-static-website$ sudo dfx canister --network=ic id lookup
+WARN: The default identity is not stored securely. Do not use it to control a lot of cycles/ICP. Create a new identity with `dfx identity create` and use it in mainnet-facing commands with the `--identity` flag
+Error: Failed to determine id for canister 'lookup'.
+Caused by: Failed to determine id for canister 'lookup'.
+  Cannot find canister id. Please issue 'dfx canister create lookup --network ic'.
+t4d4@LAPTOP-VK571E75:~/ic-static-website$ sudo dfx identity use registered_owner
+Using identity: "registered_owner".
+Error: Failed to switch default identity to 'registered_owner'.
+Caused by: Failed to switch default identity to 'registered_owner'.
+  Identity registered_owner does not exist at '/root/.config/dfx/identity/registered_owner/identity.pem'.
+t4d4@LAPTOP-VK571E75:~/ic-static-website$ sudo dfx build --all
+Building canisters...
+Building frontend...
+Error: Failed while trying to build all canisters.
+Caused by: Failed while trying to build all canisters.
+  The post-build step failed for canister 'rrkah-fqaaa-aaaaa-aaaaq-cai' (website) with an embedded error: Failed to build frontend for network 'local'.: Error executing "npm" "run" "build": No such file or directory (os error 2)
+t4d4@LAPTOP-VK571E75:~/ic-static-website$ sudo dfx canister --network ic id website
+WARN: The default identity is not stored securely. Do not use it to control a lot of cycles/ICP. Create a new identity with `dfx identity create` and use it in mainnet-facing commands with the `--identity` flag
+dzskd-haaaa-aaaag-qbcsq-cai
+t4d4@LAPTOP-VK571E75:~/ic-static-website$ sudo dfx deploy --network ic --with-cycles 1000000000000
+WARN: The default identity is not stored securely. Do not use it to control a lot of cycles/ICP. Create a new identity with `dfx identity create` and use it in mainnet-facing commands with the `--identity` flag
+Deploying all canisters.
+All canisters have already been created.
+Building canisters...
+Building frontend...
+Error: Failed while trying to deploy canisters.
+Caused by: Failed while trying to deploy canisters.
+  Failed to build call canisters.
+    Failed while trying to build all canisters.
+      The post-build step failed for canister 'dzskd-haaaa-aaaag-qbcsq-cai' (website) with an embedded error: Failed to build frontend for network 'ic'.: Error executing "npm" "run" "build": No such file or directory (os error 2)
+t4d4@LAPTOP-VK571E75:~/ic-static-website$ which npm
+/mnt/c/Program Files/nodejs//npm
+t4d4@LAPTOP-VK571E75:~/ic-static-website$ npm install
+/usr/bin/env: ‘bash\r’: No such file or directory
+t4d4@LAPTOP-VK571E75:~/ic-static-website$ sudo npm install
+sudo: npm: command not found
+t4d4@LAPTOP-VK571E75:~/ic-static-website$ rm -rf node_modules && rm package-lock.json && npm cache clear --force && npm cache clean --force && npm i
+/usr/bin/env: ‘bash\r’: No such file or directory
+t4d4@LAPTOP-VK571E75:~/ic-static-website$ cd
+t4d4@LAPTOP-VK571E75:~$ rm -rf node_modules && rm package-lock.json && npm cache clear --force && npm cache clean --force && npm i
+rm: cannot remove 'package-lock.json': No such file or directory
+t4d4@LAPTOP-VK571E75:~$ npm cache clean --force && npm i
+/usr/bin/env: ‘bash\r’: No such file or directory
+t4d4@LAPTOP-VK571E75:~$
