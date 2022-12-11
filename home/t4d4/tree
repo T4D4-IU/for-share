@@ -1,0 +1,39 @@
+t4d4@LAPTOP-VK571E75:~$ pwd
+/home/t4d4
+t4d4@LAPTOP-VK571E75:~$ tree
+.
+├── hello
+│   ├── README.md
+│   ├── dfx.json
+│   └── src
+│       ├── hello_backend
+│       │   └── main.mo
+│       └── hello_frontend
+│           └── assets
+│               └── sample-asset.txt
+└── ic-static-website
+    ├── README.md
+    ├── canister_ids.json
+    ├── dfx.json
+    ├── index.html
+    ├── jsconfig.json
+    ├── package.json
+    ├── postcss.config.cjs
+    ├── src
+    │   ├── App.svelte
+    │   ├── app.css
+    │   ├── assets
+    │   │   ├── galaxy-icon.png
+    │   │   └── galaxy-icon.png:Zone.Identifier
+    │   ├── lib
+    │   │   ├── About.svelte
+    │   │   ├── Footer.svelte
+    │   │   ├── Home.svelte
+    │   │   ├── Nav.svelte
+    │   │   └── Portfolio.svelte
+    │   ├── main.js
+    │   └── vite-env.d.ts
+    ├── tailwind.config.cjs
+    └── vite.config.js
+
+9 directories, 24 files
